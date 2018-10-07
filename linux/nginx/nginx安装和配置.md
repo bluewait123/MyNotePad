@@ -12,10 +12,19 @@
     5) 执行编译 make
     6) 执行安装 make install
     7) 安装完成得出目录 cd /usr/local/nginx
+    8) 检查是否安装成功 
+        -> cd  /usr/local/nginx/sbin
+        -> ./nginx -t
 
+> * 显示如下，安装成功nginx: 
+    he configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
+    nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
+    
 ## 命令
+    cd  /usr/local/nginx/sbin
     1) 启动命令 ./nginx
     2) 停止命令 ./nginx -s stop
+    3) 查看nginx版本 ./nginx -v
 
 ## 配置
     1) 配置文件
