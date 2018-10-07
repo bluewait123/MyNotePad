@@ -11,7 +11,7 @@
 
     <modules>
         <module>springboot-demo-common</module>
-        <module>springboot-demo-exprot-database</module>
+        <module>springboot-demo-export-database</module>
     </modules>
 
     <properties>

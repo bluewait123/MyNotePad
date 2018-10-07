@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/springboot-demo.iml" filepath="$PROJECT_DIR$/springboot-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-demo-common/springboot-demo-common.iml" filepath="$PROJECT_DIR$/springboot-demo-common/springboot-demo-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-demo-exprot-database/springboot-demo-exprot-database.iml" filepath="$PROJECT_DIR$/springboot-demo-exprot-database/springboot-demo-exprot-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-demo-export-database/springboot-demo-export-database.iml" filepath="$PROJECT_DIR$/springboot-demo-export-database/springboot-demo-export-database.iml" />
     </modules>
   </component>
 </project>

@@ -29,7 +29,12 @@
     F2 或 Shift+F2                              -- 高亮错误或警告快速定位
     Ctrl+O                                      -- 重写方法
     Ctrl+Y                                      -- 删除当前行
-    
+
+## Maven打包
+    1、选择右侧的Maven Project
+    2、选择Lifecycle，可选择package/deploy/clean/install
+##### 找不到Maven ProjectProject
+    可选择View -> Tools Buttons  
 
 
 

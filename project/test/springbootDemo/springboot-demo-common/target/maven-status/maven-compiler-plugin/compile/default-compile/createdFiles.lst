@@ -1,0 +1,5 @@
+com/springboot/demo/constant/BasicErrorCode.class
+com/springboot/demo/po/Response.class
+com/springboot/demo/constant/SystemFlag.class
+com/springboot/demo/service/CoreService.class
+com/springboot/demo/po/Request.class
