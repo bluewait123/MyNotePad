@@ -1,7 +1,8 @@
 ﻿# mysql安装
 
 标签（空格分隔）： linux mysql
-######create datee 2018-09-29 18:02:40
+
+###### create datee 2018-09-29 18:02:40
 ---
 
 ### 安装mysql
@@ -11,7 +12,7 @@
     将mysql加入到系统服务 chkconfig --add mysql
     将mysql设置开机启动 chkconfig mysql on
     
-######注意：在这里可能chkconfig没有安装，如果是的话 ，则需要安装chkconfig命令
+###### 注意：在这里可能chkconfig没有安装，如果是的话 ，则需要安装chkconfig命令
     apt-get install chkconfig
 
 ### 远程与开放端口
@@ -36,7 +37,7 @@
     7.删掉配置文件中的skip-grant-tables=1
     8.重启mysql,再次登录root用户，输入新密码
     
-###错误处理
+### 错误处理
     1.ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement
     解决办法: flush privileges
     
