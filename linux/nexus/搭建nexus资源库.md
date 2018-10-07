@@ -1,15 +1,15 @@
 ﻿# 建立maven资源库-nexus3
 
 标签（空格分隔）： linux nexus3
-######create date 2018-10-05 15:38:44
-######参考 https://www.cnblogs.com/kevingrace/p/6201984.html
+###### create date 2018-10-05 15:38:44
+###### 参考 https://www.cnblogs.com/kevingrace/p/6201984.html
 ---
 
-##一、下载nexus3
+## 一、下载nexus3
     wget http://download.sonatype.com/nexus/3/latest-mac.tgz
     得到最新的nexus3 例如:nexus-3.13.0-01-mac.tgz
 
-##二、解压并启动
+## 二、解压并启动
     解压nexus压缩包: 
         tar -zxvf nexus-3.13.0-01-mac.tgz -C /usr/local/nexus
         -- 得出:nexus-3.13.0-01、sonatype-work
@@ -21,11 +21,11 @@
     检查8081管理端口是否已启动:
         netstat -alpn|grep 8081
 
-##三、访问管理端进行配置
+## 三、访问管理端进行配置
     打开浏览器访问：http://localhost:8081/
     默认管理员用户密码:admin/admin123
 
-##四、说明
+## 四、说明
 ##### 1.component name的一些说明： 
     1）maven-central：maven中央库，默认从https://repo1.maven.org/maven2/拉取jar 
     2）maven-releases：私库发行版jar 

@@ -1,10 +1,10 @@
 ﻿# intellij idea使用
 
 标签（空格分隔）： 编程资料 开发工具 ide
-#####create date 2018-10-05 17:14:06
+##### create date 2018-10-05 17:14:06
 ---
 
-##快捷键
+## 快捷键
     Double shift                                -- 搜索当前文件内容
     Shift+Click                                 -- 可以关闭文件
     Ctrl+N                                      -- 可以快速打开类

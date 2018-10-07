@@ -1,10 +1,10 @@
 ﻿# intellij idea 设置Java快捷代码
 
 标签（空格分隔）： 编程资料 开发工具 ide
-#####create date 2018-10-05 17:28:28
+##### create date 2018-10-05 17:28:28
 ---
 
-####一、设置模板
+#### 一、设置模板
     1) 选择 File -> Settings -> Editor -> Live Templates 
     2) 选择右上角的绿色＋ , 选择2.Template Group 输入Java
     3) 选择右上角的绿色＋ , 选择1.Live Template
