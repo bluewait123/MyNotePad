@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+    <!--  <property name="USER_HOME" value="${LOG_PATH}"/> -->
+    <property name="USER_HOME" value="${LOG_PATH}"/>
+    <property name="DEFAULT_FILE_NAME" value="DEFAULT"/>
+    <property name="SYSTEM_NAME" value="basic-logic"/>
+    <property name="MaxSize" value="100mb"/> <!-- support kb、mb、gb  -->
+    <property name="QueueSize" value="8196"/>
+    <property name="MaxFlushTime" value="1000"/> <!-- ms -->
+    <property name="print_charset" value="utf-8"/>
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyyMMdd HH:mm:ss SSS}[%thread][%level][%X{LINE}]-${SYSTEM_NAME}-%msg%n</pattern>
+            <charset>${print_charset}</charset>
+        </encoder>
+    </appender>
+
+
+    <!--  debug 开发使用   -->
+    <appender name="debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${USER_HOME}/logs/debug-${SYSTEM_NAME}.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${USER_HOME}/logs/debug-%d{yyyyMMdd}-%i-${SYSTEM_NAME}.log</FileNamePattern>
+            <MaxHistory>90</MaxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>${MaxSize}</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyyMMdd HH:mm:ss SSS}[%thread][%level][%X{LINE}]-${SYSTEM_NAME}-%msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- =========================================公用配置Start=============================== -->
+    <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${USER_HOME}/logs/info-${SYSTEM_NAME}.log</File>
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator>
+                <expression>level>=INFO</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${USER_HOME}/logs/info-%d{yyyyMMdd}-${SYSTEM_NAME}.log
+            </FileNamePattern>
+            <MaxHistory>90</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyyMMdd HH:mm:ss SSS}[%thread][%level][%X{LINE}]-%msg%n</Pattern>
+        </layout>
+    </appender>
+
+
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${USER_HOME}/logs/error-${SYSTEM_NAME}.log</File>
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator>
+                <expression>level==ERROR</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${USER_HOME}/logs/error-%d{yyyyMMdd}-${SYSTEM_NAME}.log
+            </FileNamePattern>
+            <MaxHistory>90</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyyMMdd HH:mm:ss SSS} [%thread][%level][%X{LINE}]-${SYSTEM_NAME}-%msg%n</Pattern>
+        </layout>
+    </appender>
+    <!-- =========================================公用配置End=============================== -->
+
+    <appender name="async_debug" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>${QueueSize}</queueSize>
+        <!-- 缓冲时间 -->
+        <maxFlushTime>${MaxFlushTime}</maxFlushTime>
+        <appender-ref ref="debug"/>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="info"/>
+        <appender-ref ref="error"/>
+        <!--  开发 -->
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="async_debug"/>
+    </root>
+</configuration>
+
