@@ -52,6 +52,7 @@
     切换分支 git checkout master
     查看文件状态 git status
     添加所有文件 git add .
+    撤销合并文件 git checkout [branch/tag] 文件路径+文件名
 
 ### git 常用命令速查表
     * 创建版本库
