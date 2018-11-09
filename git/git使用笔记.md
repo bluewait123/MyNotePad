@@ -108,7 +108,7 @@
     git config --global --unset user.name    
     git config --global --unset user.email
     
-#### 若已下载的项目提示找不到email
+#### 若已下载的项目提示找不到email或者每次clone项目后，需配置email
     为每个项目单独配置 user.name 和 user.email
     git config user.name "yourname"
     git config user.email "youremail"
