@@ -103,10 +103,45 @@
     git push [remote] :[branch/tag-name]#删除远程分支或标签
     git push --tags                     #上传所有标签
     
+### git 多账号配置
+#### 1.取消git全局设置
+    git config --global --unset user.name    
+    git config --global --unset user.email
     
+#### 若已下载的项目提示找不到email
+    为每个项目单独配置 user.name 和 user.email
+    git config user.name "yourname"
+    git config user.email "youremail"
     
+#### 2.生成ssh key
+
+##### 2.1 先假设我有两个账号，一个是github上的，一个是公司gitlab上面的。先为不同的账号生成不同的ssh-key
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -c xxx@gmail.com
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa_company -c xxx@gmail.com
     
+##### 2.2 把id_rsa_xxx.pub中的key添加到github或gitlab上
+    1) 登录github ，选择Settings，选择SSH and GPG keys
+    2) 选择 NEW SSH key 按钮
+    3) Key输入刚刚生成的id_ras.pub内容
+    4) 选择Add SSH key按钮进行保存
     
+#### 3.编辑 ~/.ssh/config，设定不同的git 服务器对应不同的key
+    #my git
+    Host github.com
+    HostName github.com
+    User github
+    IdentityFile ~/.ssh/id_rsa_github
+    
+    #company
+    Host gitlab.f-road.com.cn
+    HostName gitlab.f-road.com.cn
+    User company
+    IdentityFile ~/.ssh/id_rsa_company
+    
+    编辑完成后可以使用命令 ssh -vT git@github.com
+    看看是不是采用了正确的id_rsa_github.pub文件
+    
+    这样每次push的时候系统就会根据不同的仓库地址使用不同的账号提交了
 
 
 
