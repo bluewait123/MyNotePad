@@ -14,7 +14,8 @@
 	<modules>
 		<module>spring-boot-test-common</module>
 		<module>spring-boot-test-basic-logic</module>
-	</modules>
+        <module>spring-boot-test-mybatis</module>
+    </modules>
 
 	<properties>
 		<!-- 文件拷贝时的编码 -->

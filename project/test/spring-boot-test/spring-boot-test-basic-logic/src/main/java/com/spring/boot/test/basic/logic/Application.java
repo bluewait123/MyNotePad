@@ -1,6 +1,6 @@
 package com.spring.boot.test.basic.logic;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +17,7 @@ import java.util.UUID;
  * Spring Boot 启动类
  * @author w
  */
-@Log4j
+@Slf4j
 @RestController
 @SpringBootApplication
 @ComponentScan(value = "com.spring.boot.test.*")

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-boot-test.iml" filepath="$PROJECT_DIR$/spring-boot-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-test-basic-logic/spring-boot-test-basic-logic.iml" filepath="$PROJECT_DIR$/spring-boot-test-basic-logic/spring-boot-test-basic-logic.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-test-common/spring-boot-test-common.iml" filepath="$PROJECT_DIR$/spring-boot-test-common/spring-boot-test-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-test-mybatis/spring-boot-test-mybatis.iml" filepath="$PROJECT_DIR$/spring-boot-test-mybatis/spring-boot-test-mybatis.iml" />
     </modules>
   </component>
 </project>
