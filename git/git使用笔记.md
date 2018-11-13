@@ -117,8 +117,8 @@
 #### 2.生成ssh key
 
 ##### 2.1 先假设我有两个账号，一个是github上的，一个是公司gitlab上面的。先为不同的账号生成不同的ssh-key
-    ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -c xxx@gmail.com
-    ssh-keygen -t rsa -f ~/.ssh/id_rsa_company -c xxx@gmail.com
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -C xxx@gmail.com
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa_company -C xxx@gmail.com
     
 ##### 2.2 把id_rsa_xxx.pub中的key添加到github或gitlab上
     1) 登录github ，选择Settings，选择SSH and GPG keys
